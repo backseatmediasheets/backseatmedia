@@ -652,16 +652,48 @@
 			background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
 			border: 1px solid var(--border);
 			border-radius: 22px;
-			padding: 32px 44px;
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-			gap: 26px;
+			padding: 16px 12px;
+			display: flex;
+			justify-content: center;
+			align-items: stretch;
+			flex-wrap: wrap;
+			gap: 0;
 			box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
 			animation: slideUp 0.8s ease 0.3s both;
 		}
 
+		.metrics-bar .stat {
+			flex: 1 1 260px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			padding: 18px 28px;
+			min-height: 90px;
+			position: relative;
+		}
+
+		.metrics-bar .stat:not(:first-child)::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			height: 54%;
+			width: 1px;
+			background: rgba(255, 255, 255, 0.22);
+		}
+
 		.metrics-bar .stat strong {
 			font-size: 28px;
+			margin-bottom: 6px;
+			text-align: center;
+		}
+
+		.metrics-bar .stat span {
+			display: block;
+			text-align: center;
 		}
 
 		.centered {
@@ -1535,15 +1567,9 @@
 							</button>
 							<button class="btn btn-driver" onclick="openDriverModal()">Join as a Driver</button>
 						</div>
-						<div class="stats-row">
-							<div class="stat"><strong>5000+</strong><span>Taxis</span></div>
-							<div class="stat"><strong>2M+</strong><span>Monthly Views</span></div>
-							<div class="stat"><strong>98%</strong><span>View Rate</span></div>
-						</div>
 					</div>
 					<div class="hero-media" aria-label="Taxi interior placeholder image">
 						<img src="pictures/backseatmedia%20picture%20concepts%201.jpeg" alt="Backseat Media concept">
-						<div class="floating-tag">Live Now</div>
 						<div class="floating-card"><small>View rate</small><strong>98%</strong></div>
 						<div class="floating-card bottom-left"><small>Avg. ride time</small><strong>12 min</strong></div>
 					</div>
@@ -1581,8 +1607,6 @@
 					</div>
 				</div>
 				<div class="metrics-bar">
-					<div class="stat"><strong>5000+</strong><span>Taxis</span></div>
-					<div class="stat"><strong>2M+</strong><span>Monthly Impressions</span></div>
 					<div class="stat"><strong>12 min</strong><span>Avg. Minutes per Ride</span></div>
 					<div class="stat"><strong>98%</strong><span>Viewability Rate</span></div>
 				</div>
